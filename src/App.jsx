@@ -82,16 +82,38 @@ function App() {
   console.log(completedFilter);
   console.log(otherFilter);
   
+  const completedList = completedFilter.map((curcompletedFilter) => {
+    return (
+    <ul>
+      <li key={curcompletedFilter.id}>
+        <h5>{curcompletedFilter.title}</h5>
+        <p>{curcompletedFilter.priority}</p>
+        <p>{curcompletedFilter.estimatedTime}</p>
+        </li>
+    </ul>)
+  })
+
+  const otherList = otherFilter.map((curotherFilter) => {
+    return (
+    <ul>
+      <li key={curotherFilter.id}>
+        <h5>{curotherFilter.title}</h5>
+        <p>{curotherFilter.priority}</p>
+        <p>{curotherFilter.estimatedTime}</p>
+        </li>
+    </ul>)
+  })
 
   return (
     <>
      <h1>Task Manager</h1>
 
      <h4>Current Tasks (4)</h4>
+     {otherList}
+     
 
-     <ul>
-      <li></li>
-     </ul>
+     <h4>Completed Task</h4>
+     {completedList}
     </>
   )
 }
