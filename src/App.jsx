@@ -106,7 +106,7 @@ function App() {
 
   return (
     <>
-     <h1>Task Manager</h1>
+     <h1 className="title">Task Manager</h1>
 
      <h4>Current Tasks (4)</h4>
      {otherList}
