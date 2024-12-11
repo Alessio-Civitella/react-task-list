@@ -1,33 +1,97 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const tasks = [
+  {
+    id: 1,
+    title: "Implementare la homepage",
+    priority: 1,
+    estimatedTime: 120,
+    state: "completed"
+  },
+  {
+    id: 2,
+    title: "Sviluppare il menu di navigazione",
+    priority: 2,
+    estimatedTime: 60,
+    state: "completed"
+  },
+  {
+    id: 3,
+    title: "Creare il footer del sito",
+    priority: 3,
+    estimatedTime: 30,
+    state: "completed"
+  },
+  {
+    id: 4,
+    title: "Ottimizzare le performance",
+    priority: 1,
+    estimatedTime: 180,
+    state: "completed"
+  },
+  {
+    id: 5,
+    title: "Scrivere test per i componenti",
+    priority: 2,
+    estimatedTime: 90,
+    state: "completed"
+  },
+  {
+    id: 6,
+    title: "Implementare la pagina dei contatti",
+    priority: 3,
+    estimatedTime: 60,
+    state: "completed"
+  },
+  {
+    id: 7,
+    title: "Aggiungere animazioni CSS",
+    priority: 2,
+    estimatedTime: 30,
+    state: "backlog"
+  },
+  {
+    id: 8,
+    title: "Integrare l'API di autenticazione",
+    priority: 1,
+    estimatedTime: 120,
+    state: "in_progress"
+  },
+  {
+    id: 9,
+    title: "Aggiornare la documentazione",
+    priority: 3,
+    estimatedTime: 60,
+    state: "backlog"
+  },
+  {
+    id: 10,
+    title: "Rifattorizzare il codice CSS",
+    priority: 2,
+    estimatedTime: 90,
+    state: "in_progress"
+  }
+];
+
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const completedFilter = tasks.filter((curCompleted) => curCompleted.state === "completed")
+  const otherFilter = tasks.filter((curOther) => curOther.state !== "completed")
+
+  console.log(completedFilter);
+  console.log(otherFilter);
+  
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <h1>Task Manager</h1>
+
+     <h4>Current Tasks (4)</h4>
+
+     <ul>
+      <li></li>
+     </ul>
     </>
   )
 }
