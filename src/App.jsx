@@ -1,3 +1,5 @@
+import './App.css'
+
 const tasks = [
   {
     id: 1,
@@ -86,7 +88,7 @@ function App() {
     return (
     <ul>
       <li key={curcompletedFilter.id}>
-        <h5>{curcompletedFilter.title}</h5>
+        <h5>{curcompletedFilter.title}<p className='fakebutton'>{curcompletedFilter.state}</p></h5>
         <p>{curcompletedFilter.priority}</p>
         <p>{curcompletedFilter.estimatedTime}</p>
         </li>
@@ -97,7 +99,7 @@ function App() {
     return (
     <ul>
       <li key={curotherFilter.id}>
-        <h5>{curotherFilter.title}</h5>
+        <h5>{curotherFilter.title}<p className='fakebutton'>{curotherFilter.state}</p></h5>
         <p>{curotherFilter.priority}</p>
         <p>{curotherFilter.estimatedTime}</p>
         </li>
@@ -110,7 +112,8 @@ function App() {
 
      <h4>Current Tasks (4)</h4>
      {otherList}
-     
+
+     <hr />
 
      <h4>Completed Task</h4>
      {completedList}
